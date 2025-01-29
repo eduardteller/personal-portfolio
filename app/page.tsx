@@ -35,35 +35,53 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-zinc-900">
+      <section className="bg-zinc-900/80">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-4 px-4 py-24">
           <h5 className="mx-auto w-fit text-sm font-bold uppercase text-blue-600">
             about
           </h5>
           <h2 className="text-4xl font-bold text-zinc-100/80">My Story</h2>
 
-          <div className={`mt-4 flex gap-4 ${inter.className}`}>
+          <div className={`mt-12 flex gap-4 ${inter.className}`}>
             <div className="flex basis-1/3 items-center justify-center">
-              <div className="relative h-72 w-72">
+              <div className="group relative h-72 w-72">
                 <div className="animate-gradient absolute -inset-[2px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600"></div>
                 <Image
                   width={400}
                   height={400}
                   alt="Me"
                   src="/me.jpg"
-                  className="rounded-lg object-cover grayscale duration-300 hover:grayscale-0"
+                  className="relative rounded-lg object-cover grayscale duration-300 hover:grayscale-0"
                 />
               </div>
             </div>
             <div
               className={`${inter.className} flex basis-2/3 flex-col justify-center gap-4 px-8`}
             >
-              <p className="prose prose-lg text-zinc-100/80">{`My name is Eduard Teller, and I'm a Fullstack Web Developer from Tallinn, Estonia.
+              <div className="prose prose-lg text-zinc-100/80">
+                <p>
+                  Hi, I’m <span className="font-semibold">Eduard Teller</span>,
+                  a{" "}
+                  <span className="font-semibold">Fullstack Web Developer</span>{" "}
+                  based in{" "}
+                  <span className="font-semibold">Tallinn, Estonia</span>.{" "}
+                  {`I’m currently studying Hardware Development and Programming at TalTech.
+
+I started web development in 2020 as a hobby, and it quickly became my passion. Since then, I’ve gained strong experience with modern web technologies. I love building scalable, efficient, and user-friendly applications that solve real-world problems.
+
+When I’m not coding, I enjoy learning about new technologies!`}
+                </p>
+                <p>
+                  <span className="font-semibold">Other Interests:</span> AI,
+                  Crypto, Fitness
+                </p>
+              </div>
+              {/* <p className="prose prose-lg text-zinc-100/80">{`My name is Eduard Teller, and I'm a Fullstack Web Developer from Tallinn, Estonia.
               I'm currently studying IT at TalTech, Estonia's largest tech university.
               
               My journey began in 2020 when I decided to learn web development for a hobby project, and I was hooked immediately. I later pursued IT studies at TalTech, where I gained extensive knowledge about software development. I also developed skills in teamwork, essential algorithms, design patterns, and programming fundamentals.
               
-              Since then, I've learned a lot about modern technologies and protocols that power the web, including TypeScript, React, Next.js, Node.js, Express, backend systems like Supabase, to name a few. `}</p>
+              Since then, I've learned a lot about modern technologies and protocols that power the web, including TypeScript, React, Next.js, Node.js, Express, backend systems like Supabase, to name a few. `}</p> */}
               <div className="group relative w-fit cursor-default">
                 <div
                   className={`animate-gradient absolute inset-0 rounded-md bg-gradient-to-r from-blue-600 via-purple-600 to-red-600`}
@@ -87,7 +105,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-zinc-100/80">I Excel At</h2>
 
           <div
-            className={`mt-4 flex w-fit flex-wrap items-center justify-center gap-4 tracking-tight ${inter.className}`}
+            className={`mt-12 flex w-fit flex-wrap items-center justify-center gap-4 tracking-tight ${inter.className}`}
           >
             {/* first */}
             <SkillBadge title="Next" image="/next.png" alt="Next" />
@@ -143,10 +161,35 @@ export default function Home() {
           <h5 className="mx-auto w-fit text-sm font-bold uppercase text-blue-600">
             education
           </h5>
-          <h2 className="text-4xl font-bold text-zinc-100/80">I Studied At</h2>
+          <h2 className="text-4xl font-bold text-zinc-100/80">
+            {`I'm Studying At`}
+          </h2>
+          <div className="relative mt-12">
+            <div className="animate-gradient absolute -inset-[2px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600" />
+            <div className="relative flex gap-4 rounded-lg bg-zinc-900 p-8 text-zinc-100/80">
+              <Image
+                src={"/tal.jpg"}
+                width={200}
+                height={200}
+                alt="TalTech"
+                className="rounded-md object-cover grayscale"
+              />
+              <div className="flex flex-col gap-2">
+                <h5 className="text-xl font-semibold">
+                  Bachelor of Hardware Development <br /> and Programming
+                </h5>
+                <h6 className="text-lg font-semibold text-zinc-100/70">
+                  Tallinn Unviersity of Technology
+                </h6>
+                <p className="text-sm font-bold uppercase text-zinc-100/70">
+                  Sept 2022 - Present
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-      <section className="relative bg-zinc-900">
+      <section className="relative bg-zinc-900/80">
         {/* <div className="absolute right-0 top-0 z-[1] h-full w-full bg-zinc-950/40"></div> */}
         <div className="z-50 mx-auto flex h-full w-full max-w-7xl flex-col items-center px-4 py-24">
           <div className="flex w-full gap-4">
