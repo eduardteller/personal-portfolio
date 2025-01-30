@@ -6,14 +6,33 @@ export const inter = Inter({
   subsets: ["latin"],
 });
 
-export const poppins = Poppins({
+const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "Eduard Teller",
-  description: "Make your dreams come true",
+  description: "Fullstack Web & Mobile Developer",
+  keywords: [
+    "web",
+    "developer",
+    "mobile",
+    "fullstack",
+    "react",
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "nodejs",
+    "express",
+    "mongodb",
+    "graphql",
+    "prisma",
+    "react native",
+    "expo",
+    "frontend",
+    "backend",
+  ],
 };
 
 export default function RootLayout({

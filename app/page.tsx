@@ -1,6 +1,8 @@
 import ContactForm from "@/components/ContactForm";
 import LinkBadge from "@/components/LinkBadge";
+import ProjectCard from "@/components/ProjectCard";
 import SkillBadge from "@/components/SkillBadge";
+import SkillBadgeSmall from "@/components/SkillBadgeSmall";
 import StarsBackground from "@/components/StarsBG";
 import Typewriter from "@/components/Typewriter";
 import { FileUser, Mail } from "lucide-react";
@@ -59,7 +61,7 @@ export default function Home() {
                     height={400}
                     alt="Me"
                     src="/me.jpg"
-                    className="rounded-lg object-cover grayscale duration-300 hover:grayscale-0"
+                    className="relative rounded-lg object-cover grayscale duration-300 hover:grayscale-0"
                   />
                 </div>
               </div>
@@ -99,7 +101,7 @@ When I’m not coding, I enjoy learning about new technologies!`}
                   ></div>
                   <a
                     href="/cv-eng.pdf"
-                    className="relative flex items-center gap-2 rounded-lg border border-zinc-100/80 bg-zinc-900 p-4 leading-none text-zinc-100/80 duration-150 group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:text-zinc-100"
+                    className="relative flex items-center gap-2 rounded-lg border border-zinc-100/80 bg-[#151517] p-4 leading-none text-zinc-100/80 duration-150 group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:text-zinc-100"
                   >
                     <FileUser className="h-6 w-6" />
                     <p className="text-sm font-bold uppercase">Download CV</p>
@@ -138,11 +140,7 @@ When I’m not coding, I enjoy learning about new technologies!`}
               <SkillBadge title="Node.js" image="/node.png" alt="Node" />
 
               {/* second */}
-              <SkillBadge
-                title="Express.js"
-                image="/express.png"
-                alt="Express"
-              />
+              <SkillBadge title="Express.js" image="/exx.png" alt="Express" />
               <SkillBadge title="SQL" image="/sql.png" alt="SQL" />
               <SkillBadge
                 title="PostgreSQL"
@@ -173,16 +171,84 @@ When I’m not coding, I enjoy learning about new technologies!`}
           </div>
         </section>
         <section className="bg-zinc-900">
-          <div className="mx-auto flex w-full max-w-4xl flex-col items-center gap-4 px-4 py-24">
+          <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-4 px-4 py-24">
             <h5 className="mx-auto w-fit text-sm font-bold uppercase text-blue-600">
               projects
             </h5>
             <h2 className="text-4xl font-bold text-zinc-100/80">
               Stuff I Built
             </h2>
-            <div className="mt-12 flex w-full gap-4">
-              <div className="h-20 basis-1/2 rounded-lg border border-zinc-100 p-4"></div>
-              <div className="h-20 basis-1/2 rounded-lg border border-zinc-100 p-4"></div>
+            <div className={`mt-12 flex w-full gap-4 ${inter.className}`}>
+              <ProjectCard
+                link="https://koolitech.ee"
+                title="KooliTech - E-Kell"
+                desc={`A software solution for schools to manage bells and alarms via desktop
+          or web. Easily control, schedule, and monitor systems remotely,
+          enhancing safety and efficiency.`}
+                image="/legacy/kool.png"
+                alt="KooliTech"
+              >
+                <SkillBadgeSmall image="/react.png" title="React" />
+                <SkillBadgeSmall image="/electron.png" title="Electron" />
+                <SkillBadgeSmall image="/ts.png" title="TypeScript" />
+                <SkillBadgeSmall image="/node.png" title="Node.js" />
+                <SkillBadgeSmall image="/exx.png" title="Express" />
+                <SkillBadgeSmall image="/tail.png" title="TailwindCSS" />
+              </ProjectCard>
+              <ProjectCard
+                link="https://neosec.tech"
+                title="NeoSec Website"
+                desc={`A software solution for schools to manage bells and alarms via desktop
+          or web. Easily control, schedule, and monitor systems remotely,
+          enhancing safety and efficiency.`}
+                image="/legacy/neo2.png"
+                alt="NeoSec"
+              >
+                <SkillBadgeSmall image="/next.png" title="NextJS" />
+                <SkillBadgeSmall image="/react.png" title="React" />
+                <SkillBadgeSmall image="/ts.png" title="TypeScript" />
+                <SkillBadgeSmall image="/tail.png" title="TailwindCSS" />
+              </ProjectCard>
+
+              <ProjectCard
+                link="https://kahoot-clone-1a7dcaeaf061.herokuapp.com"
+                title="Kahoot! Clone"
+                desc={`I recreated the popular quiz game Kahoot as a full-stack web application. This project includes features like user authentication, real-time multiplayer quizzes, and a responsive design for different devices.`}
+                image="/legacy/kahoot-4.png"
+                alt="Kahoot"
+              >
+                <SkillBadgeSmall image="/react.png" title="React" />
+                <SkillBadgeSmall image="/ts.png" title="TypeScript" />
+                <SkillBadgeSmall image="/node.png" title="Node.js" />
+                <SkillBadgeSmall image="/exx.png" title="Express" />
+                <SkillBadgeSmall image="/tail.png" title="TailwindCSS" />
+                <SkillBadgeSmall image="/mongo.png" title="MongoDB" />
+              </ProjectCard>
+            </div>
+            <div
+              className={`mt-4 flex w-full justify-center gap-4 ${inter.className}`}
+            >
+              <ProjectCard
+                link=""
+                title="Solana Scanner - Telegram Bot"
+                desc={`My Solana Scanner Telegram Bot makes it easy to check key stats for any new token on the Solana blockchain. Just enter the contract address, and the bot shows details like burn/mint status, price, market cap, liquidity, all-time high, rug pull warnings, developer info, social links, holders, and more.`}
+                image="/legacy/bot.png"
+                alt="bot"
+              >
+                <SkillBadgeSmall image="/python.svg" title="Python" />
+              </ProjectCard>
+              <ProjectCard
+                link=""
+                title="Reddit-Like Forum"
+                desc={`A web app inspired by Reddit, where users can create, share, and discuss content within various communities. Engage in conversations, upvote posts, and explore trending topics in a clean, user-friendly interface.`}
+                image="/legacy/reddit-4.png"
+                alt="Reddit"
+              >
+                <SkillBadgeSmall image="/react.png" title="React" />
+                <SkillBadgeSmall image="/ts.png" title="TypeScript" />
+                <SkillBadgeSmall image="/tail.png" title="TailwindCSS" />
+                <SkillBadgeSmall image="/supa.png" title="Supabase" />
+              </ProjectCard>
             </div>
           </div>
         </section>
@@ -228,16 +294,20 @@ When I’m not coding, I enjoy learning about new technologies!`}
                   contact
                 </h5>
                 <h2 className="text-4xl font-bold text-zinc-100/80">{`Let's Connect`}</h2>
-                <p className="text-base font-medium text-zinc-100/60">
-                  {`Send an Email or Fill out the form and I'll get back to you
+                <p
+                  className={`text-base font-medium text-zinc-100/60 ${inter.className}`}
+                >
+                  {`Send me an Email or Fill out the form and I'll get back to you
                   within 24 hours.`}
                 </p>
-                <div className="flex w-fit items-center gap-2 rounded-md font-medium text-zinc-100/60">
+                <div
+                  className={`${inter.className} flex w-fit items-center gap-2 rounded-md font-medium text-zinc-100/60`}
+                >
                   <Mail className="h-6 w-6 text-zinc-100/80" />
                   hello@eduardteller.me
                 </div>
               </div>
-              <div className="basis-1/2 px-8">
+              <div className={`${inter.className} basis-1/2 px-8`}>
                 <ContactForm />
               </div>
             </div>

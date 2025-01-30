@@ -7,7 +7,7 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  safelist: ["bg-zinc-100"],
+  safelist: ["bg-zinc-100", "bg-[#151517]"],
   theme: {
     extend: {
       keyframes: {
@@ -18,9 +18,6 @@ export default {
       },
       animation: {
         comet: "comet 1s linear forwards",
-      },
-      fontFamily: {
-        thunder: ["Thunder", "sans-serif"],
       },
     },
   },
