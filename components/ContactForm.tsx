@@ -35,19 +35,21 @@ const ContactForm = () => {
     setLoading(true);
     const resp = await sendContact(data);
     if (!resp.status) {
-      toast.error("Error", {
+      toast.error("Error while sending info", {
         style: {
-          borderRadius: "6px",
+          borderRadius: "8px",
           background: "#27272a",
           color: "#e4e4e7",
+          border: "1px solid #e4e4e7",
         },
       });
     } else {
       toast.success("Message Sent", {
         style: {
-          borderRadius: "6px",
+          borderRadius: "8px",
           background: "#27272a",
           color: "#e4e4e7",
+          border: "1px solid #e4e4e7",
         },
       });
       reset();

@@ -1,11 +1,12 @@
 import ContactForm from "@/components/ContactForm";
+import CopyMail from "@/components/EmailComponent";
 import LinkBadge from "@/components/LinkBadge";
 import ProjectCard from "@/components/ProjectCard";
 import SkillBadge from "@/components/SkillBadge";
 import SkillBadgeSmall from "@/components/SkillBadgeSmall";
 import StarsBackground from "@/components/StarsBG";
 import Typewriter from "@/components/Typewriter";
-import { FileUser, Mail } from "lucide-react";
+import { FileUser } from "lucide-react";
 import Image from "next/image";
 import { inter } from "./layout";
 
@@ -22,11 +23,11 @@ export default function Home() {
                 hi👋, my name is
               </p>
               <h1
-                className={`animate-gradient w-fit -translate-x-1 bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 bg-clip-text text-8xl font-black uppercase tracking-tight text-transparent`}
+                className={`animate-gradient w-fit -translate-x-1 bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 bg-clip-text text-8xl font-black uppercase tracking-tight text-transparent max-sm:text-6xl`}
               >
                 Eduard Teller
               </h1>
-              <h3 className="text-2xl font-medium text-zinc-100/80">
+              <h3 className="text-2xl font-medium text-zinc-100/80 max-sm:text-xl">
                 Full Stack Developer with expertise in{" "}
                 {/* <span className="font-semibold text-zinc-100">NEXT.JS</span> */}
                 <Typewriter />
@@ -48,10 +49,14 @@ export default function Home() {
             <h5 className="mx-auto w-fit text-sm font-bold uppercase text-blue-600">
               about
             </h5>
-            <h2 className="text-4xl font-bold text-zinc-100/80">My Story</h2>
+            <h2 className="text-4xl font-bold text-zinc-100/80 max-sm:text-3xl">
+              My Story
+            </h2>
 
-            <div className={`mt-12 flex gap-4 ${inter.className}`}>
-              <div className="mt-2 flex basis-1/3 justify-center">
+            <div
+              className={`mt-12 flex gap-4 max-sm:flex-col ${inter.className}`}
+            >
+              <div className="mt-2 flex justify-center md:basis-1/3">
                 <div className="group relative h-72 w-72">
                   <div className="animate-gradient absolute -inset-[1px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600" />
                   {/* <div className="animate-gradient absolute -inset-[1px] hidden rounded-lg bg-zinc-100 opacity-0 duration-300 group-hover:opacity-80" /> */}
@@ -66,7 +71,7 @@ export default function Home() {
                 </div>
               </div>
               <div
-                className={`${inter.className} flex basis-2/3 flex-col justify-center gap-4 px-8`}
+                className={`${inter.className} flex flex-col justify-center gap-4 px-8 md:basis-2/3`}
               >
                 <div className="prose prose-lg text-zinc-100/80">
                   <p>
@@ -95,7 +100,7 @@ When I’m not coding, I enjoy learning about new technologies!`}
                   </p>
                 </div>
 
-                <div className="group relative w-fit cursor-default">
+                <div className="group relative w-fit cursor-default max-sm:mx-auto">
                   <div
                     className={`animate-gradient absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600`}
                   ></div>
@@ -175,10 +180,12 @@ When I’m not coding, I enjoy learning about new technologies!`}
             <h5 className="mx-auto w-fit text-sm font-bold uppercase text-blue-600">
               projects
             </h5>
-            <h2 className="text-4xl font-bold text-zinc-100/80">
+            <h2 className="text-3xl font-bold text-zinc-100/80 md:text-4xl">
               Stuff I Built
             </h2>
-            <div className={`mt-12 flex w-full gap-4 ${inter.className}`}>
+            <div
+              className={`mt-12 flex w-full gap-4 max-lg:flex-wrap max-lg:items-center max-lg:justify-center max-sm:flex-col ${inter.className}`}
+            >
               <ProjectCard
                 link="https://koolitech.ee"
                 title="KooliTech - E-Kell"
@@ -226,7 +233,7 @@ When I’m not coding, I enjoy learning about new technologies!`}
               </ProjectCard>
             </div>
             <div
-              className={`mt-4 flex w-full justify-center gap-4 ${inter.className}`}
+              className={`mt-4 flex w-full flex-row justify-center gap-4 max-sm:flex-col ${inter.className}`}
             >
               <ProjectCard
                 link=""
@@ -288,7 +295,7 @@ When I’m not coding, I enjoy learning about new technologies!`}
         <section className="relative bg-zinc-900/80">
           {/* <div className="absolute right-0 top-0 z-[1] h-full w-full bg-zinc-950/40"></div> */}
           <div className="z-50 mx-auto flex h-full w-full max-w-7xl flex-col items-center px-4 py-24">
-            <div className="flex w-full gap-4">
+            <div className="flex w-full gap-4 max-sm:flex-col max-sm:gap-8">
               <div className="flex basis-1/2 flex-col gap-4 px-8">
                 <h5 className="text-sm font-bold uppercase text-blue-600">
                   contact
@@ -300,12 +307,7 @@ When I’m not coding, I enjoy learning about new technologies!`}
                   {`Send me an Email or Fill out the form and I'll get back to you
                   within 24 hours.`}
                 </p>
-                <div
-                  className={`${inter.className} flex w-fit items-center gap-2 rounded-md font-medium text-zinc-100/60`}
-                >
-                  <Mail className="h-6 w-6 text-zinc-100/80" />
-                  hello@eduardteller.me
-                </div>
+                <CopyMail />
               </div>
               <div className={`${inter.className} basis-1/2 px-8`}>
                 <ContactForm />

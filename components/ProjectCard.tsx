@@ -17,7 +17,7 @@ const poppins = Poppins({
 
 const ProjectCard = ({ image, alt, title, children, desc, link }: Props) => {
   return (
-    <div className="min-h-20 basis-1/3 space-y-2 overflow-hidden rounded-lg border border-zinc-100/80 bg-transparent text-zinc-100/80">
+    <div className="min-h-20 space-y-2 overflow-hidden rounded-lg border border-zinc-100/80 bg-transparent text-zinc-100/80 max-lg:max-w-96 lg:basis-1/3">
       <a target="_blank" rel="noopener noreferrer" href={link}>
         <Image
           width={400}
