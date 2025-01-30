@@ -3,7 +3,7 @@ import { FileUser } from "lucide-react";
 const LinkBadge = () => {
   return (
     <>
-      <a href="" className="group relative">
+      <a href="https://linkedin.com/in/eduardteller" className="group relative">
         <div
           className={`animate-gradient absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600`}
         />
@@ -21,7 +21,7 @@ const LinkBadge = () => {
           </svg>
         </div>
       </a>
-      <a href="" className="group relative">
+      <a href="https://github.com/eduardteller" className="group relative">
         <div
           className={`animate-gradient absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600`}
         />
@@ -39,7 +39,7 @@ const LinkBadge = () => {
           </svg>
         </div>
       </a>
-      <a href="" className="group relative">
+      <a href="/cv-eng.pdf" className="group relative">
         <div
           className={`animate-gradient absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600`}
         />

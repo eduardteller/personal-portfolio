@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+::selection {
+  background: #155dfc;
+  color: #d4d4d8;
+}
+
 /* app/globals.css */
 @keyframes pulse {
   0% {
