@@ -7,8 +7,12 @@ import SkillBadgeSmall from "@/components/SkillBadgeSmall";
 import StarsBackground from "@/components/StarsBG";
 import Typewriter from "@/components/Typewriter";
 import { FileUser } from "lucide-react";
+import { Inter } from "next/font/google";
 import Image from "next/image";
-import { inter } from "./layout";
+
+const inter = Inter({
+  subsets: ["latin"],
+});
 
 export default function Home() {
   return (
