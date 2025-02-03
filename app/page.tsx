@@ -240,7 +240,7 @@ When I’m not coding, I enjoy learning about new technologies!`}
               className={`mt-4 flex w-full flex-row justify-center gap-4 max-sm:flex-col ${inter.className}`}
             >
               <ProjectCard
-                link=""
+                link="https://t.me/SaulScanBot"
                 title="Solana Scanner - Telegram Bot"
                 desc={`My Solana Scanner Telegram Bot makes it easy to check key stats for any new token on the Solana blockchain. Just enter the contract address, and the bot shows details like burn/mint status, price, market cap, liquidity, all-time high, rug pull warnings, developer info, social links, holders, and more.`}
                 image="/legacy/bot.png"
