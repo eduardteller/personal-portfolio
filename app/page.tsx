@@ -249,7 +249,7 @@ When I’m not coding, I enjoy learning about new technologies!`}
                 <SkillBadgeSmall image="/python.svg" title="Python" />
               </ProjectCard>
               <ProjectCard
-                link=""
+                link="https://byteboard.vercel.app/"
                 title="Reddit-Like Forum"
                 desc={`A web app inspired by Reddit, where users can create, share, and discuss content within various communities. Engage in conversations, upvote posts, and explore trending topics in a clean, user-friendly interface.`}
                 image="/legacy/reddit-4.png"
