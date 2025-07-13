@@ -45,7 +45,7 @@ const LinkBadge = () => {
           </span>
         </div>
       </a>
-      <a href="/cv-eng.pdf" className="group relative">
+      <a href="/eduardteller_english.pdf" className="group relative">
         <div
           className={`animate-gradient absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600`}
         />

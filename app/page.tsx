@@ -103,7 +103,7 @@ export default function Home() {
                     className={`animate-gradient absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600`}
                   ></div>
                   <a
-                    href="/cv-eng.pdf"
+                    href="/eduardteller_english.pdf"
                     className="relative flex items-center gap-2 rounded-lg border border-zinc-100/80 bg-[#151517] p-4 leading-none text-zinc-100/80 duration-150 group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:text-zinc-100"
                   >
                     <FileUser className="h-6 w-6" />
@@ -269,6 +269,7 @@ export default function Home() {
                 image="/legacy/kool.png"
                 alt="KooliTech"
                 github="https://github.com/eduardteller/koolitech-dashboard"
+                demo="https://koolitech.ee"
               >
                 <SkillBadgeSmall image="/react.png" title="React" />
                 <SkillBadgeSmall image="/electron.png" title="Electron" />
@@ -285,6 +286,7 @@ export default function Home() {
                 image="/legacy/kahoot-4.png"
                 alt="Kahoot"
                 github="https://github.com/eduardteller/kahoot-remake"
+                demo="https://kahoot-clone-1a7dcaeaf061.herokuapp.com"
               >
                 <SkillBadgeSmall image="/react.png" title="React" />
                 <SkillBadgeSmall image="/ts.png" title="TypeScript" />
@@ -328,6 +330,7 @@ export default function Home() {
                 image="/legacy/reddit-4.png"
                 alt="Reddit"
                 github="https://github.com/eduardteller/byteboard"
+                demo="https://byteboard.vercel.app/"
               >
                 <SkillBadgeSmall image="/react.png" title="React" />
                 <SkillBadgeSmall image="/ts.png" title="TypeScript" />
@@ -343,6 +346,7 @@ export default function Home() {
                 image="/legacy/neo2.png"
                 alt="NeoSec"
                 github="https://github.com/eduardteller/neosec-landing"
+                demo="https://neosec.tech"
               >
                 <SkillBadgeSmall image="/next.png" title="NextJS" />
                 <SkillBadgeSmall image="/react.png" title="React" />
