@@ -37,12 +37,6 @@ export default function Home() {
                 <Typewriter />
               </h3>
               <div className="flex gap-4">
-                {/* <a
-                className="group rounded-md border border-zinc-100/60 p-2 hover:border-zinc-100"
-                href="https://linkedin.com"
-              >
-                <Linked />
-              </a> */}
                 <LinkBadge />
               </div>
             </div>
@@ -102,10 +96,6 @@ export default function Home() {
                   <p>
                     {`While studying hardware development, I found a strong interest in software engineering. Since then, I've spent a lot of time learning and improving my skills in different areas of software development. I like building solutions that help solve real problems.`}
                   </p>
-                  <p>
-                    {`When I'm not coding, I enjoy exploring new technologies like
-                    AI and blockchain and learning how modern systems works.`}
-                  </p>
                 </div>
 
                 <div className="group relative w-fit cursor-default max-sm:mx-auto">
@@ -117,7 +107,7 @@ export default function Home() {
                     className="relative flex items-center gap-2 rounded-lg border border-zinc-100/80 bg-[#151517] p-4 leading-none text-zinc-100/80 duration-150 group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:text-zinc-100"
                   >
                     <FileUser className="h-6 w-6" />
-                    <p className="text-sm font-bold uppercase">{`curriculum vitae (cv)`}</p>
+                    <p className="text-sm font-bold uppercase">{`CV`}</p>
                   </a>
                 </div>
               </div>
@@ -265,7 +255,7 @@ export default function Home() {
               projects
             </h5>
             <h2 className="text-3xl font-bold text-zinc-100/80 md:text-4xl">
-              Stuff I Built
+              Some of My Work
             </h2>
             <div
               className={`mt-12 flex w-full gap-4 max-lg:flex-wrap max-lg:items-center max-lg:justify-center max-sm:flex-col ${inter.className}`}
@@ -278,26 +268,13 @@ export default function Home() {
           enhancing safety and efficiency.`}
                 image="/legacy/kool.png"
                 alt="KooliTech"
+                github="https://github.com/eduardteller/koolitech-dashboard"
               >
                 <SkillBadgeSmall image="/react.png" title="React" />
                 <SkillBadgeSmall image="/electron.png" title="Electron" />
                 <SkillBadgeSmall image="/ts.png" title="TypeScript" />
                 <SkillBadgeSmall image="/node.png" title="Node.js" />
                 <SkillBadgeSmall image="/exx.png" title="Express" />
-                <SkillBadgeSmall image="/tail.png" title="TailwindCSS" />
-              </ProjectCard>
-              <ProjectCard
-                link="https://neosec.tech"
-                title="NeoSec Website"
-                desc={`A software solution for schools to manage bells and alarms via desktop
-          or web. Easily control, schedule, and monitor systems remotely,
-          enhancing safety and efficiency.`}
-                image="/legacy/neo2.png"
-                alt="NeoSec"
-              >
-                <SkillBadgeSmall image="/next.png" title="NextJS" />
-                <SkillBadgeSmall image="/react.png" title="React" />
-                <SkillBadgeSmall image="/ts.png" title="TypeScript" />
                 <SkillBadgeSmall image="/tail.png" title="TailwindCSS" />
               </ProjectCard>
 
@@ -307,6 +284,7 @@ export default function Home() {
                 desc={`I recreated the popular quiz game Kahoot as a full-stack web application. This project includes features like user authentication, real-time multiplayer quizzes, and a responsive design for different devices.`}
                 image="/legacy/kahoot-4.png"
                 alt="Kahoot"
+                github="https://github.com/eduardteller/kahoot-remake"
               >
                 <SkillBadgeSmall image="/react.png" title="React" />
                 <SkillBadgeSmall image="/ts.png" title="TypeScript" />
@@ -315,15 +293,30 @@ export default function Home() {
                 <SkillBadgeSmall image="/tail.png" title="TailwindCSS" />
                 <SkillBadgeSmall image="/mongo.png" title="MongoDB" />
               </ProjectCard>
+              <ProjectCard
+                link="https://github.com/eduardteller/yrituste-haldamissysteem"
+                title="Events Management System"
+                desc={`A Web App that allows users to create and manage events and also add the participants to the event, add existing participants to other events.`}
+                image="/legacy/events_managment.png"
+                alt="bot"
+                github="https://github.com/eduardteller/yrituste-haldamissysteem"
+              >
+                <SkillBadgeSmall image="/java.webp" title="Java" />
+                <SkillBadgeSmall image="/spring.svg" title="Java Spring" />
+                <SkillBadgeSmall image="/react.png" title="React" />
+                <SkillBadgeSmall image="/ts.png" title="TypeScript" />
+                <SkillBadgeSmall image="/tail.png" title="TailwindCSS" />
+              </ProjectCard>
             </div>
             <div
-              className={`mt-4 flex w-full flex-row justify-center gap-4 max-sm:flex-col ${inter.className}`}
+              className={`mt-4 flex w-full gap-4 max-lg:flex-wrap max-lg:items-center max-lg:justify-center max-sm:flex-col ${inter.className}`}
             >
               <ProjectCard
-                link="https://t.me/SaulScanBot"
+                link="https://github.com/eduardteller/sol-scanner"
                 title="Solana Scanner - Telegram Bot"
                 desc={`My Solana Scanner Telegram Bot makes it easy to check key stats for any new token on the Solana blockchain. Just enter the contract address, and the bot shows details like burn/mint status, price, market cap, liquidity, all-time high, rug pull warnings, developer info, social links, holders, and more.`}
                 image="/legacy/bot.png"
+                github="https://github.com/eduardteller/sol-scanner"
                 alt="bot"
               >
                 <SkillBadgeSmall image="/python.svg" title="Python" />
@@ -334,133 +327,183 @@ export default function Home() {
                 desc={`A web app inspired by Reddit, where users can create, share, and discuss content within various communities. Engage in conversations, upvote posts, and explore trending topics in a clean, user-friendly interface.`}
                 image="/legacy/reddit-4.png"
                 alt="Reddit"
+                github="https://github.com/eduardteller/byteboard"
               >
                 <SkillBadgeSmall image="/react.png" title="React" />
                 <SkillBadgeSmall image="/ts.png" title="TypeScript" />
                 <SkillBadgeSmall image="/tail.png" title="TailwindCSS" />
                 <SkillBadgeSmall image="/supa.png" title="Supabase" />
               </ProjectCard>
+              <ProjectCard
+                link="https://neosec.tech"
+                title="NeoSec Website"
+                desc={`A software solution for schools to manage bells and alarms via desktop
+          or web. Easily control, schedule, and monitor systems remotely,
+          enhancing safety and efficiency.`}
+                image="/legacy/neo2.png"
+                alt="NeoSec"
+                github="https://github.com/eduardteller/neosec-landing"
+              >
+                <SkillBadgeSmall image="/next.png" title="NextJS" />
+                <SkillBadgeSmall image="/react.png" title="React" />
+                <SkillBadgeSmall image="/ts.png" title="TypeScript" />
+                <SkillBadgeSmall image="/tail.png" title="TailwindCSS" />
+              </ProjectCard>
             </div>
           </div>
         </section>
         <section className="bg-zinc-900">
-          <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-4 px-4 py-24">
+          <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-4 px-4 py-24">
             <h5 className="mx-auto w-fit text-sm font-bold uppercase text-blue-600">
-              education
+              Experience
             </h5>
             <h2 className="text-4xl font-bold text-zinc-100/80">
-              Academic Background
+              Work History & Education
             </h2>
 
-            <ol className="relative border-s border-zinc-600">
-              <li className="ms-4">
-                <div className="absolute -start-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-zinc-600"></div>
-                <div className="group relative mt-12 max-w-3xl">
-                  {/* 1. Initial gray border (always visible in the background) */}
-                  <div className="absolute -inset-[1px] rounded-lg bg-zinc-600" />
+            <div className="flex justify-between gap-8 p-4">
+              <ol className="relative basis-1/2 border-s border-zinc-600">
+                <li className="group ms-4">
+                  <div className="absolute -start-1.5 h-3 w-3 rounded-full border border-zinc-600 bg-zinc-600 duration-150 group-hover:border-zinc-100/80 group-hover:bg-zinc-100/80"></div>
+                  <div className="relative mt-4">
+                    {/* 1. Initial gray border (always visible in the background) */}
+                    <div className="absolute -inset-[1px] rounded-lg bg-zinc-600" />
 
-                  {/* 2. Colored gradient that smoothly fades in on top */}
-                  <div className="animate-gradient absolute -inset-[1px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-                  <div className="relative flex gap-4 rounded-lg bg-zinc-900 p-8 text-zinc-100/80 max-sm:flex-col">
-                    <Image
-                      src={"/taltech.png"}
-                      width={200}
-                      height={200}
-                      alt="TalTech"
-                      className="h-fit w-64 object-cover"
-                    />
-                    <div className="flex flex-col gap-3">
-                      <h5 className="text-xl font-semibold">
-                        Bachelor of Hardware Development and Programming
-                      </h5>
-                      <h6 className="text-lg font-semibold text-zinc-100/70">
-                        Tallinn University of Technology (TalTech)
-                      </h6>
-                      <p className="text-sm font-bold uppercase text-zinc-100/70">
-                        Sept 2022 - Jun 2025
-                      </p>
-                      <div className="mt-2">
-                        <p className="mb-2 text-sm text-zinc-100/60">
-                          Key coursework completed:
+                    {/* 2. Colored gradient that smoothly fades in on top */}
+                    <div className="animate-gradient absolute -inset-[1px] rounded-lg bg-zinc-100/80 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                    <div className="relative flex items-start gap-8 rounded-lg bg-zinc-900 p-8 text-zinc-100/80 max-sm:flex-col">
+                      <Image
+                        src={"/AI-Eesti-dark.svg"}
+                        width={200}
+                        height={200}
+                        alt="TalTech"
+                        className="h-fit w-32 object-contain"
+                      />
+                      <div className="flex flex-col gap-3">
+                        <h5 className="text-xl font-semibold">AI Eesti</h5>
+                        <h6 className="text-lg font-semibold text-zinc-100/70">
+                          Full Stack Engineer
+                        </h6>
+                        <p className="text-sm font-bold uppercase text-zinc-100/70">
+                          Feb 2025 - Jun 2025
                         </p>
-                        <ul className="list-inside list-disc space-y-1 text-sm text-zinc-100/60">
-                          <li>
-                            <span className="font-medium">
-                              Web Technologies
-                            </span>{" "}
-                            (ICD0007)
-                          </li>
-                          <li>
-                            <span className="font-medium">
-                              Data Security and Cryptology
-                            </span>{" "}
-                            (ICA0003)
-                          </li>
-                          <li>
-                            <span className="font-medium">Programming II</span>{" "}
-                            (IAX0584)
-                          </li>
-                          <li>
-                            <span className="font-medium">
-                              Algorithms and Data Structures
-                            </span>{" "}
-                            (IAS0090)
-                          </li>
-                          <li>
-                            <span className="font-medium">
-                              Software Engineering
-                            </span>{" "}
-                            (IAS0110)
-                          </li>
-                          <li>
-                            <span className="font-medium">
-                              Software Project
-                            </span>{" "}
-                            (IAS1410)
-                          </li>
-                          <li>
-                            <span className="font-medium">
-                              Foundations of Cyber Security
-                            </span>{" "}
-                            (ITI0216)
-                          </li>
-                        </ul>
                       </div>
                     </div>
                   </div>
-                </div>
-              </li>
-              <li className="ms-4">
-                <div className="absolute -start-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-zinc-600"></div>
-                <div className="group relative mt-8 w-full max-w-3xl">
-                  {/* 1. Initial gray border (always visible in the background) */}
-                  <div className="absolute -inset-[1px] rounded-lg bg-zinc-600" />
+                </li>
+              </ol>
+              <ol className="relative basis-1/2 border-s border-zinc-600">
+                <li className="group ms-4">
+                  <div className="absolute -start-1.5 h-3 w-3 rounded-full border border-zinc-600 bg-zinc-600 duration-150 group-hover:border-zinc-100/80 group-hover:bg-zinc-100/80"></div>
+                  <div className="relative mt-4">
+                    {/* 1. Initial gray border (always visible in the background) */}
+                    <div className="absolute -inset-[1px] rounded-lg bg-zinc-600" />
 
-                  {/* 2. Colored gradient that smoothly fades in on top */}
-                  <div className="animate-gradient absolute -inset-[1px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-                  <div className="relative flex gap-4 rounded-lg bg-zinc-900 p-8 text-zinc-100/80 max-sm:flex-col">
-                    <Image
-                      src={"/kk.png"}
-                      width={200}
-                      height={200}
-                      alt="Kallavere Keskkool"
-                      className="w-64 object-contain"
-                    />
-                    <div className="flex flex-col gap-3">
-                      <h5 className="text-xl font-semibold">
-                        Secondary Education
-                      </h5>
-                      <h6 className="text-lg font-semibold text-zinc-100/70">
-                        Kallavere Keskkool
-                      </h6>
-                      <p className="text-sm font-bold uppercase text-zinc-100/70">
-                        Sept 2019 - Jun 2022
-                      </p>
+                    {/* 2. Colored gradient that smoothly fades in on top */}
+                    <div className="animate-gradient absolute -inset-[1px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                    <div className="relative flex items-start gap-8 rounded-lg bg-zinc-900 p-8 text-zinc-100/80 max-sm:flex-col">
+                      <Image
+                        src={"/taltech.png"}
+                        width={200}
+                        height={200}
+                        alt="TalTech"
+                        className="w-32 object-contain pt-2"
+                      />
+                      <div className="flex flex-col gap-3">
+                        <h5 className="text-xl font-semibold">
+                          Bachelor of Hardware Development and Programming
+                        </h5>
+                        <h6 className="text-lg font-semibold text-zinc-100/70">
+                          Tallinn University of Technology (TalTech)
+                        </h6>
+                        <p className="text-sm font-bold uppercase text-zinc-100/70">
+                          Sept 2022 - Jun 2025
+                        </p>
+                        {/* <div className="mt-2">
+                          <p className="mb-2 text-sm text-zinc-100/60">
+                            Key coursework completed:
+                          </p>
+                          <ul className="list-inside list-disc space-y-1 text-sm text-zinc-100/60">
+                            <li>
+                              <span className="font-medium">
+                                Web Technologies
+                              </span>{" "}
+                              (ICD0007)
+                            </li>
+                            <li>
+                              <span className="font-medium">
+                                Data Security and Cryptology
+                              </span>{" "}
+                              (ICA0003)
+                            </li>
+                            <li>
+                              <span className="font-medium">
+                                Programming II
+                              </span>{" "}
+                              (IAX0584)
+                            </li>
+                            <li>
+                              <span className="font-medium">
+                                Algorithms and Data Structures
+                              </span>{" "}
+                              (IAS0090)
+                            </li>
+                            <li>
+                              <span className="font-medium">
+                                Software Engineering
+                              </span>{" "}
+                              (IAS0110)
+                            </li>
+                            <li>
+                              <span className="font-medium">
+                                Software Project
+                              </span>{" "}
+                              (IAS1410)
+                            </li>
+                            <li>
+                              <span className="font-medium">
+                                Foundations of Cyber Security
+                              </span>{" "}
+                              (ITI0216)
+                            </li>
+                          </ul>
+                        </div> */}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </li>
-            </ol>
+                </li>
+                <li className="group ms-4">
+                  <div className="absolute -start-1.5 h-3 w-3 rounded-full border border-zinc-600 bg-zinc-600 duration-150 group-hover:border-zinc-100/80 group-hover:bg-zinc-100/80"></div>
+                  <div className="relative mt-8 w-full">
+                    {/* 1. Initial gray border (always visible in the background) */}
+                    <div className="absolute -inset-[1px] rounded-lg bg-zinc-600" />
+
+                    {/* 2. Colored gradient that smoothly fades in on top */}
+                    <div className="animate-gradient absolute -inset-[1px] rounded-lg bg-zinc-100/80 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                    <div className="relative flex gap-8 rounded-lg bg-zinc-900 p-8 text-zinc-100/80 max-sm:flex-col">
+                      <Image
+                        src={"/kk.png"}
+                        width={200}
+                        height={200}
+                        alt="Kallavere Keskkool"
+                        className="w-32 object-cover"
+                      />
+                      <div className="flex flex-col gap-3">
+                        <h5 className="text-xl font-semibold">
+                          Secondary Education
+                        </h5>
+                        <h6 className="text-lg font-semibold text-zinc-100/70">
+                          Kallavere Keskkool
+                        </h6>
+                        <p className="text-sm font-bold uppercase text-zinc-100/70">
+                          Sept 2019 - Jun 2022
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ol>
+            </div>
           </div>
         </section>
         <section className="relative bg-zinc-900/80">

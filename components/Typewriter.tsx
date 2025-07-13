@@ -6,18 +6,13 @@ const Typewriter = () => {
   return (
     <TypeAnimation
       sequence={[
-        // Same substring at the start will only be typed out once, initially
+        "Java Spring",
+        4000,
         "Next.JS",
-        4000, // wait 1s before replacing "Mice" with "Hamsters"
-        "React Native",
-        4000,
-        "Electron",
-        4000,
-        "Expo",
-        4000,
-        "Python",
         4000,
         ".NET",
+        4000,
+        "React Native",
         4000,
       ]}
       wrapper="span"
