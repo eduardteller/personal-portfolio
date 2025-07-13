@@ -351,101 +351,116 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-zinc-100/80">
               Academic Background
             </h2>
-            <div className="group relative mt-12 max-w-3xl">
-              {/* 1. Initial gray border (always visible in the background) */}
-              <div className="absolute -inset-[1px] rounded-lg bg-zinc-600" />
 
-              {/* 2. Colored gradient that smoothly fades in on top */}
-              <div className="animate-gradient absolute -inset-[1px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-              <div className="relative flex gap-4 rounded-lg bg-zinc-900 p-8 text-zinc-100/80 max-sm:flex-col">
-                <Image
-                  src={"/taltech.png"}
-                  width={200}
-                  height={200}
-                  alt="TalTech"
-                  className="w-64 object-contain"
-                />
-                <div className="flex flex-col gap-3">
-                  <h5 className="text-xl font-semibold">
-                    Bachelor of Hardware Development and Programming
-                  </h5>
-                  <h6 className="text-lg font-semibold text-zinc-100/70">
-                    Tallinn University of Technology (TalTech)
-                  </h6>
-                  <p className="text-sm font-bold uppercase text-zinc-100/70">
-                    Sept 2022 - Jun 2025
-                  </p>
-                  <div className="mt-2">
-                    <p className="mb-2 text-sm text-zinc-100/60">
-                      Key coursework completed:
-                    </p>
-                    <ul className="list-inside list-disc space-y-1 text-sm text-zinc-100/60">
-                      <li>
-                        <span className="font-medium">Web Technologies</span>{" "}
-                        (ICD0007)
-                      </li>
-                      <li>
-                        <span className="font-medium">
-                          Data Security and Cryptology
-                        </span>{" "}
-                        (ICA0003)
-                      </li>
-                      <li>
-                        <span className="font-medium">Programming II</span>{" "}
-                        (IAX0584)
-                      </li>
-                      <li>
-                        <span className="font-medium">
-                          Algorithms and Data Structures
-                        </span>{" "}
-                        (IAS0090)
-                      </li>
-                      <li>
-                        <span className="font-medium">
-                          Software Engineering
-                        </span>{" "}
-                        (IAS0110)
-                      </li>
-                      <li>
-                        <span className="font-medium">Software Project</span>{" "}
-                        (IAS1410)
-                      </li>
-                      <li>
-                        <span className="font-medium">
-                          Foundations of Cyber Security
-                        </span>{" "}
-                        (ITI0216)
-                      </li>
-                    </ul>
+            <ol className="relative border-s border-zinc-600">
+              <li className="ms-4">
+                <div className="absolute -start-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-zinc-600"></div>
+                <div className="group relative mt-12 max-w-3xl">
+                  {/* 1. Initial gray border (always visible in the background) */}
+                  <div className="absolute -inset-[1px] rounded-lg bg-zinc-600" />
+
+                  {/* 2. Colored gradient that smoothly fades in on top */}
+                  <div className="animate-gradient absolute -inset-[1px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                  <div className="relative flex gap-4 rounded-lg bg-zinc-900 p-8 text-zinc-100/80 max-sm:flex-col">
+                    <Image
+                      src={"/taltech.png"}
+                      width={200}
+                      height={200}
+                      alt="TalTech"
+                      className="h-fit w-64 object-cover"
+                    />
+                    <div className="flex flex-col gap-3">
+                      <h5 className="text-xl font-semibold">
+                        Bachelor of Hardware Development and Programming
+                      </h5>
+                      <h6 className="text-lg font-semibold text-zinc-100/70">
+                        Tallinn University of Technology (TalTech)
+                      </h6>
+                      <p className="text-sm font-bold uppercase text-zinc-100/70">
+                        Sept 2022 - Jun 2025
+                      </p>
+                      <div className="mt-2">
+                        <p className="mb-2 text-sm text-zinc-100/60">
+                          Key coursework completed:
+                        </p>
+                        <ul className="list-inside list-disc space-y-1 text-sm text-zinc-100/60">
+                          <li>
+                            <span className="font-medium">
+                              Web Technologies
+                            </span>{" "}
+                            (ICD0007)
+                          </li>
+                          <li>
+                            <span className="font-medium">
+                              Data Security and Cryptology
+                            </span>{" "}
+                            (ICA0003)
+                          </li>
+                          <li>
+                            <span className="font-medium">Programming II</span>{" "}
+                            (IAX0584)
+                          </li>
+                          <li>
+                            <span className="font-medium">
+                              Algorithms and Data Structures
+                            </span>{" "}
+                            (IAS0090)
+                          </li>
+                          <li>
+                            <span className="font-medium">
+                              Software Engineering
+                            </span>{" "}
+                            (IAS0110)
+                          </li>
+                          <li>
+                            <span className="font-medium">
+                              Software Project
+                            </span>{" "}
+                            (IAS1410)
+                          </li>
+                          <li>
+                            <span className="font-medium">
+                              Foundations of Cyber Security
+                            </span>{" "}
+                            (ITI0216)
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="group relative mt-8 w-full max-w-3xl">
-              {/* 1. Initial gray border (always visible in the background) */}
-              <div className="absolute -inset-[1px] rounded-lg bg-zinc-600" />
+              </li>
+              <li className="ms-4">
+                <div className="absolute -start-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-zinc-600"></div>
+                <div className="group relative mt-8 w-full max-w-3xl">
+                  {/* 1. Initial gray border (always visible in the background) */}
+                  <div className="absolute -inset-[1px] rounded-lg bg-zinc-600" />
 
-              {/* 2. Colored gradient that smoothly fades in on top */}
-              <div className="animate-gradient absolute -inset-[1px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-              <div className="relative flex gap-4 rounded-lg bg-zinc-900 p-8 text-zinc-100/80 max-sm:flex-col">
-                <Image
-                  src={"/kk.png"}
-                  width={200}
-                  height={200}
-                  alt="Kallavere Keskkool"
-                  className="w-64 object-contain"
-                />
-                <div className="flex flex-col gap-3">
-                  <h5 className="text-xl font-semibold">Secondary Education</h5>
-                  <h6 className="text-lg font-semibold text-zinc-100/70">
-                    Kallavere Keskkool
-                  </h6>
-                  <p className="text-sm font-bold uppercase text-zinc-100/70">
-                    Sept 2019 - Jun 2022
-                  </p>
+                  {/* 2. Colored gradient that smoothly fades in on top */}
+                  <div className="animate-gradient absolute -inset-[1px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                  <div className="relative flex gap-4 rounded-lg bg-zinc-900 p-8 text-zinc-100/80 max-sm:flex-col">
+                    <Image
+                      src={"/kk.png"}
+                      width={200}
+                      height={200}
+                      alt="Kallavere Keskkool"
+                      className="w-64 object-contain"
+                    />
+                    <div className="flex flex-col gap-3">
+                      <h5 className="text-xl font-semibold">
+                        Secondary Education
+                      </h5>
+                      <h6 className="text-lg font-semibold text-zinc-100/70">
+                        Kallavere Keskkool
+                      </h6>
+                      <p className="text-sm font-bold uppercase text-zinc-100/70">
+                        Sept 2019 - Jun 2022
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </li>
+            </ol>
           </div>
         </section>
         <section className="relative bg-zinc-900/80">
