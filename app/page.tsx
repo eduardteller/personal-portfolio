@@ -62,15 +62,18 @@ export default function Home() {
             >
               <div className="mt-2 flex justify-center md:basis-1/3">
                 <div className="group relative h-72 w-72">
-                  <div className="animate-gradient absolute -inset-[1px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600" />
-                  {/* <div className="animate-gradient absolute -inset-[1px] hidden rounded-lg bg-zinc-100 opacity-0 duration-300 group-hover:opacity-80" /> */}
-                  {/* <div className="animate-gradient absolute -inset-[2px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600" /> */}
+                  {/* 1. Initial gray border (always visible in the background) */}
+                  <div className="absolute -inset-[1px] rounded-lg bg-zinc-600" />
+
+                  {/* 2. Colored gradient that smoothly fades in on top */}
+                  <div className="animate-gradient absolute -inset-[1px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+
                   <Image
                     width={400}
                     height={400}
                     alt="Me"
                     src="/me.jpg"
-                    className="relative rounded-lg object-cover grayscale duration-300 hover:grayscale-0"
+                    className="relative rounded-lg object-cover grayscale transition-all duration-200 group-hover:grayscale-0"
                   />
                 </div>
               </div>
@@ -78,8 +81,8 @@ export default function Home() {
                 className={`${inter.className} flex flex-col justify-center gap-4 px-8 md:basis-2/3`}
               >
                 <div className="prose prose-lg text-zinc-100/80">
-                  <p>
-                    Hi, I’m{" "}
+                  <span>
+                    {`Hi, I'm`}{" "}
                     <span className="font-semibold duration-150 hover:text-blue-600">
                       Eduard Teller
                     </span>
@@ -92,15 +95,16 @@ export default function Home() {
                       Tallinn, Estonia
                     </span>
                     .{" "}
-                    {`I’m currently studying Hardware Development and Programming at TalTech.
-
-I started web development in 2020 as a hobby, and it quickly became my passion. Since then, I’ve gained strong experience with modern web technologies. I love building scalable, efficient, and user-friendly applications that solve real-world problems.
-
-When I’m not coding, I enjoy learning about new technologies!`}
+                  </span>
+                  <p>
+                    {`I recently finished my Bachelor's degree and have a lot of experience building personal projects like my school bell management system, as well as real-world work experience where I was one of the main team members developing a web system using Java and React, which helps automate the management of real estate documents.`}
                   </p>
                   <p>
-                    <span className="font-semibold">Other Interests:</span> AI,
-                    Crypto, Fitness
+                    {`While studying hardware development, I found a strong interest in software engineering. Since then, I've spent a lot of time learning and improving my skills in different areas of software development. I like building solutions that help solve real problems.`}
+                  </p>
+                  <p>
+                    {`When I'm not coding, I enjoy exploring new technologies like
+                    AI and blockchain and learning how modern systems works.`}
                   </p>
                 </div>
 
@@ -113,7 +117,7 @@ When I’m not coding, I enjoy learning about new technologies!`}
                     className="relative flex items-center gap-2 rounded-lg border border-zinc-100/80 bg-[#151517] p-4 leading-none text-zinc-100/80 duration-150 group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:text-zinc-100"
                   >
                     <FileUser className="h-6 w-6" />
-                    <p className="text-sm font-bold uppercase">Download CV</p>
+                    <p className="text-sm font-bold uppercase">{`curriculum vitae (cv)`}</p>
                   </a>
                 </div>
               </div>
@@ -128,54 +132,130 @@ When I’m not coding, I enjoy learning about new technologies!`}
             <h2 className="text-4xl font-bold text-zinc-100/80">I Excel At</h2>
 
             <div
-              className={`mt-12 flex w-fit flex-wrap items-center justify-center gap-4 tracking-tight ${inter.className}`}
+              className={`mt-12 flex w-full flex-col items-center justify-center gap-8 tracking-tight ${inter.className}`}
             >
-              {/* first */}
-              <SkillBadge title="Next.JS" image="/next.png" alt="Next.js" />
-              <SkillBadge title="React" image="/react.png" alt="React" />
-              <SkillBadge
-                title="React Native"
-                image="/native.png"
-                alt="React Native"
-              />
-              <SkillBadge title="JavaScript" image="/js.png" alt="JavaScript" />
-              <SkillBadge title="typeScript" image="/ts.png" alt="TypeScript" />
-              <SkillBadge title="HTML & CSS" image="/cs.png" alt="CSS" />
-              <SkillBadge
-                title="TailwindCSS"
-                image="/tail.png"
-                alt="TailwindCSS"
-              />
-              <SkillBadge title="Node.js" image="/node.png" alt="Node" />
+              {/* Frontend Development */}
+              <div className="flex w-full flex-col items-center gap-4">
+                <h3 className="font-bold uppercase text-zinc-100/90">
+                  Frontend
+                </h3>
+                <div className="flex w-fit flex-wrap items-center justify-center gap-4">
+                  <SkillBadge title="React" image="/react.png" alt="React" />
+                  <SkillBadge title="Next.JS" image="/next.png" alt="Next.js" />
+                  <SkillBadge
+                    title="typeScript"
+                    image="/ts.png"
+                    alt="TypeScript"
+                  />
+                  <SkillBadge
+                    title="JavaScript"
+                    image="/js.png"
+                    alt="JavaScript"
+                  />
+                  <SkillBadge title="HTML & CSS" image="/cs.png" alt="CSS" />
+                  <SkillBadge
+                    title="TailwindCSS"
+                    image="/tail.png"
+                    alt="TailwindCSS"
+                  />
+                </div>
+              </div>
 
-              {/* second */}
-              <SkillBadge title="Express.js" image="/exx.png" alt="Express" />
-              <SkillBadge title="SQL" image="/sql.png" alt="SQL" />
-              <SkillBadge
-                title="PostgreSQL"
-                image="/postgre.png"
-                alt="PostgreSQL"
-              />
-              <SkillBadge title="MongoDB" image="/mongo.png" alt="MongoDB" />
-              <SkillBadge title="SupaBase" image="/supa.png" alt="SupaBase" />
-              <SkillBadge title="Sqlite" image="/sqlite.png" alt="Sqlite" />
-              <SkillBadge
-                title="Electron"
-                image="/electron.png"
-                alt="Electron"
-              />
-              <SkillBadge title="Expo" image="/expo.png" alt="Expo" />
-              <SkillBadge title="Python" image="/python.svg" alt="Python" />
-              <SkillBadge title="C#" image="/csh.png" alt="C#" />
-              <SkillBadge title=".NET" image="/net.png" alt=".NET" />
-              <SkillBadge
-                title="Git/GITHUB"
-                image="/git.png"
-                alt="Git/GitHub"
-              />
-              <SkillBadge title="Docker" image="/dock.webp" alt="Docker" />
-              <SkillBadge title="Linux" image="/linux.svg" alt="Linux" />
-              <SkillBadge title="Windows" image="/w.png" alt="Windows" />
+              {/* Backend Development */}
+              <div className="flex w-full flex-col items-center gap-4">
+                <h3 className="font-bold uppercase text-zinc-100/90">
+                  Backend
+                </h3>
+                <div className="flex w-fit flex-wrap items-center justify-center gap-4">
+                  <SkillBadge title="Node.js" image="/node.png" alt="Node" />
+                  <SkillBadge
+                    title="Express.js"
+                    image="/exx.png"
+                    alt="Express"
+                  />
+                  <SkillBadge title="Java" image="/java.webp" alt="Java" />
+                  <SkillBadge
+                    title="Java Spring"
+                    image="/spring.svg"
+                    alt="Java Spring"
+                  />
+                  <SkillBadge title="Python" image="/python.svg" alt="Python" />
+                  <SkillBadge title="C#" image="/csh.png" alt="C#" />
+                  <SkillBadge title=".NET" image="/net.png" alt=".NET" />
+                </div>
+              </div>
+
+              {/* Database Technologies */}
+              <div className="flex w-full flex-col items-center gap-4">
+                <h3 className="font-bold uppercase text-zinc-100/90">
+                  Databases
+                </h3>
+                <div className="flex w-fit flex-wrap items-center justify-center gap-4">
+                  <SkillBadge
+                    title="PostgreSQL"
+                    image="/postgre.png"
+                    alt="PostgreSQL"
+                  />
+                  <SkillBadge
+                    title="MongoDB"
+                    image="/mongo.png"
+                    alt="MongoDB"
+                  />
+                  <SkillBadge title="SQL" image="/sql.png" alt="SQL" />
+                  <SkillBadge
+                    title="SupaBase"
+                    image="/supa.png"
+                    alt="SupaBase"
+                  />
+                  <SkillBadge title="Neon" image="/neon.png" alt="Neon" />
+                  <SkillBadge title="Sqlite" image="/sqlite.png" alt="Sqlite" />
+                </div>
+              </div>
+
+              {/* DevOps & Cloud */}
+              <div className="flex w-full flex-col items-center gap-4">
+                <h3 className="font-bold uppercase text-zinc-100/90">DevOps</h3>
+                <div className="flex w-fit flex-wrap items-center justify-center gap-4">
+                  <SkillBadge title="AWS" image="/aws.png" alt="AWS" />
+                  <SkillBadge title="Docker" image="/dock.webp" alt="Docker" />
+                  <SkillBadge
+                    title="Git/GITHUB"
+                    image="/git.png"
+                    alt="Git/GitHub"
+                  />
+                </div>
+              </div>
+
+              {/* Mobile & Desktop Development */}
+              <div className="flex w-full flex-col items-center gap-4">
+                <h3 className="font-bold uppercase text-zinc-100/90">
+                  Native Development
+                </h3>
+                <div className="flex w-fit flex-wrap items-center justify-center gap-4">
+                  <SkillBadge
+                    title="React Native"
+                    image="/native.png"
+                    alt="React Native"
+                  />
+                  <SkillBadge title="Expo" image="/expo.png" alt="Expo" />
+                  <SkillBadge
+                    title="Electron"
+                    image="/electron.png"
+                    alt="Electron"
+                  />
+                </div>
+              </div>
+
+              {/* Tools & Systems */}
+              <div className="flex w-full flex-col items-center gap-4">
+                <h3 className="font-bold uppercase text-zinc-100/90">
+                  Tools & Systems
+                </h3>
+                <div className="flex w-fit flex-wrap items-center justify-center gap-4">
+                  <SkillBadge title="Linux" image="/linux.svg" alt="Linux" />
+                  <SkillBadge title="Windows" image="/w.png" alt="Windows" />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -263,39 +343,111 @@ When I’m not coding, I enjoy learning about new technologies!`}
             </div>
           </div>
         </section>
-        {/* <section className="bg-zinc-900">
-        <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-4 px-4 py-24">
-          <h5 className="mx-auto w-fit text-sm font-bold uppercase text-blue-600">
-            education
-          </h5>
-          <h2 className="text-4xl font-bold text-zinc-100/80">
-            {`I'm Studying At`}
-          </h2>
-          <div className="relative mt-12">
-            <div className="animate-gradient absolute -inset-[2px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600" />
-            <div className="relative flex gap-4 rounded-lg bg-zinc-900 p-8 text-zinc-100/80">
-              <Image
-                src={"/tal.jpg"}
-                width={200}
-                height={200}
-                alt="TalTech"
-                className="rounded-md object-cover grayscale"
-              />
-              <div className="flex flex-col gap-2">
-                <h5 className="text-xl font-semibold">
-                  Bachelor of Hardware Development <br /> and Programming
-                </h5>
-                <h6 className="text-lg font-semibold text-zinc-100/70">
-                  Tallinn Unviersity of Technology
-                </h6>
-                <p className="text-sm font-bold uppercase text-zinc-100/70">
-                  Sept 2022 - Present
-                </p>
+        <section className="bg-zinc-900">
+          <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-4 px-4 py-24">
+            <h5 className="mx-auto w-fit text-sm font-bold uppercase text-blue-600">
+              education
+            </h5>
+            <h2 className="text-4xl font-bold text-zinc-100/80">
+              Academic Background
+            </h2>
+            <div className="group relative mt-12 max-w-3xl">
+              {/* 1. Initial gray border (always visible in the background) */}
+              <div className="absolute -inset-[1px] rounded-lg bg-zinc-600" />
+
+              {/* 2. Colored gradient that smoothly fades in on top */}
+              <div className="animate-gradient absolute -inset-[1px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+              <div className="relative flex gap-4 rounded-lg bg-zinc-900 p-8 text-zinc-100/80 max-sm:flex-col">
+                <Image
+                  src={"/taltech.png"}
+                  width={200}
+                  height={200}
+                  alt="TalTech"
+                  className="w-64 object-contain"
+                />
+                <div className="flex flex-col gap-3">
+                  <h5 className="text-xl font-semibold">
+                    Bachelor of Hardware Development and Programming
+                  </h5>
+                  <h6 className="text-lg font-semibold text-zinc-100/70">
+                    Tallinn University of Technology (TalTech)
+                  </h6>
+                  <p className="text-sm font-bold uppercase text-zinc-100/70">
+                    Sept 2022 - Jun 2025
+                  </p>
+                  <div className="mt-2">
+                    <p className="mb-2 text-sm text-zinc-100/60">
+                      Key coursework completed:
+                    </p>
+                    <ul className="list-inside list-disc space-y-1 text-sm text-zinc-100/60">
+                      <li>
+                        <span className="font-medium">Web Technologies</span>{" "}
+                        (ICD0007)
+                      </li>
+                      <li>
+                        <span className="font-medium">
+                          Data Security and Cryptology
+                        </span>{" "}
+                        (ICA0003)
+                      </li>
+                      <li>
+                        <span className="font-medium">Programming II</span>{" "}
+                        (IAX0584)
+                      </li>
+                      <li>
+                        <span className="font-medium">
+                          Algorithms and Data Structures
+                        </span>{" "}
+                        (IAS0090)
+                      </li>
+                      <li>
+                        <span className="font-medium">
+                          Software Engineering
+                        </span>{" "}
+                        (IAS0110)
+                      </li>
+                      <li>
+                        <span className="font-medium">Software Project</span>{" "}
+                        (IAS1410)
+                      </li>
+                      <li>
+                        <span className="font-medium">
+                          Foundations of Cyber Security
+                        </span>{" "}
+                        (ITI0216)
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="group relative mt-8 w-full max-w-3xl">
+              {/* 1. Initial gray border (always visible in the background) */}
+              <div className="absolute -inset-[1px] rounded-lg bg-zinc-600" />
+
+              {/* 2. Colored gradient that smoothly fades in on top */}
+              <div className="animate-gradient absolute -inset-[1px] rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+              <div className="relative flex gap-4 rounded-lg bg-zinc-900 p-8 text-zinc-100/80 max-sm:flex-col">
+                <Image
+                  src={"/kk.png"}
+                  width={200}
+                  height={200}
+                  alt="Kallavere Keskkool"
+                  className="w-64 object-contain"
+                />
+                <div className="flex flex-col gap-3">
+                  <h5 className="text-xl font-semibold">Secondary Education</h5>
+                  <h6 className="text-lg font-semibold text-zinc-100/70">
+                    Kallavere Keskkool
+                  </h6>
+                  <p className="text-sm font-bold uppercase text-zinc-100/70">
+                    Sept 2019 - Jun 2022
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section> */}
+        </section>
         <section className="relative bg-zinc-900/80">
           {/* <div className="absolute right-0 top-0 z-[1] h-full w-full bg-zinc-950/40"></div> */}
           <div className="z-50 mx-auto flex h-full w-full max-w-7xl flex-col items-center px-4 py-24">
