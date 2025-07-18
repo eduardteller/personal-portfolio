@@ -6,7 +6,7 @@ import SkillBadge from "@/components/SkillBadge";
 import SkillBadgeSmall from "@/components/SkillBadgeSmall";
 import StarsBackground from "@/components/StarsBG";
 import Typewriter from "@/components/Typewriter";
-import { FileUser } from "lucide-react";
+import { Briefcase, FileUser, GraduationCap } from "lucide-react";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 
@@ -91,7 +91,7 @@ export default function Home() {
                     .{" "}
                   </span>
                   <p>
-                    {`I recently finished my Bachelor's degree and have a lot of experience building personal projects like my school bell management system, as well as real-world work experience where I was one of the main team members developing a web system using Java and React, which helps automate the management of real estate documents.`}
+                    {`I recently finished my Bachelor's degree and have a lot of experience building personal projects, as well as real-world work experience.`}
                   </p>
                   <p>
                     {`While studying hardware development, I found a strong interest in software engineering. Since then, I've spent a lot of time learning and improving my skills in different areas of software development. I like building solutions that help solve real problems.`}
@@ -246,6 +246,18 @@ export default function Home() {
                   <SkillBadge title="Windows" image="/w.png" alt="Windows" />
                 </div>
               </div>
+
+              {/* Testing */}
+              <div className="flex w-full flex-col items-center gap-4">
+                <h3 className="font-bold uppercase text-zinc-100/90">
+                  Testing
+                </h3>
+                <div className="flex w-fit flex-wrap items-center justify-center gap-4">
+                  <SkillBadge title="Jest" image="/jest.svg" alt="Jest" />
+                  <SkillBadge title="Vitest" image="/vitest.png" alt="Vitest" />
+                  <SkillBadge title="Junit" image="/junit.png" alt="Junit" />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -359,14 +371,14 @@ export default function Home() {
         <section className="bg-zinc-900">
           <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-4 px-4 py-24">
             <h5 className="mx-auto w-fit text-sm font-bold uppercase text-blue-600">
-              Experience
+              Professional Journey
             </h5>
             <h2 className="text-4xl font-bold text-zinc-100/80">
-              Work History & Education
+              Experience & Education
             </h2>
 
             <div className="flex justify-between gap-8 p-4">
-              <ol className="relative basis-1/2 border-s border-zinc-600">
+              <ol className="relative border-s border-zinc-600">
                 <li className="group ms-4">
                   <div className="absolute -start-1.5 h-3 w-3 rounded-full border border-zinc-600 bg-zinc-600 duration-150 group-hover:border-zinc-100/80 group-hover:bg-zinc-100/80"></div>
                   <div className="relative mt-4">
@@ -381,12 +393,18 @@ export default function Home() {
                         width={200}
                         height={200}
                         alt="TalTech"
-                        className="h-fit w-32 object-contain"
+                        className="h-16 w-16 object-contain max-sm:h-32 max-sm:w-32"
                       />
                       <div className="flex flex-col gap-3">
-                        <h5 className="text-xl font-semibold">AI Eesti</h5>
+                        <h5 className="flex items-start gap-2 text-xl font-semibold text-zinc-100/80">
+                          <Briefcase
+                            size={24}
+                            className="shrink-0 max-md:hidden"
+                          />{" "}
+                          <p>Full Stack Engineer</p>
+                        </h5>
                         <h6 className="text-lg font-semibold text-zinc-100/70">
-                          Full Stack Engineer
+                          AI Eesti
                         </h6>
                         <p className="text-sm font-bold uppercase text-zinc-100/70">
                           Feb 2025 - Jun 2025
@@ -395,8 +413,6 @@ export default function Home() {
                     </div>
                   </div>
                 </li>
-              </ol>
-              <ol className="relative basis-1/2 border-s border-zinc-600">
                 <li className="group ms-4">
                   <div className="absolute -start-1.5 h-3 w-3 rounded-full border border-zinc-600 bg-zinc-600 duration-150 group-hover:border-zinc-100/80 group-hover:bg-zinc-100/80"></div>
                   <div className="relative mt-4">
@@ -411,19 +427,25 @@ export default function Home() {
                         width={200}
                         height={200}
                         alt="TalTech"
-                        className="w-32 object-contain pt-2"
+                        className="h-16 w-16 object-contain max-sm:h-32 max-sm:w-32"
                       />
                       <div className="flex flex-col gap-3">
-                        <h5 className="text-xl font-semibold">
-                          Bachelor of Hardware Development and Programming
-                        </h5>
+                        <div className="flex gap-2 text-xl font-semibold text-zinc-100/80">
+                          <GraduationCap
+                            size={24}
+                            className="shrink-0 max-md:hidden"
+                          />
+                          <p>
+                            Bachelor of Hardware Development and Programming
+                          </p>
+                        </div>
                         <h6 className="text-lg font-semibold text-zinc-100/70">
                           Tallinn University of Technology (TalTech)
                         </h6>
                         <p className="text-sm font-bold uppercase text-zinc-100/70">
                           Sept 2022 - Jun 2025
                         </p>
-                        {/* <div className="mt-2">
+                        <div className="mt-2">
                           <p className="mb-2 text-sm text-zinc-100/60">
                             Key coursework completed:
                           </p>
@@ -471,7 +493,7 @@ export default function Home() {
                               (ITI0216)
                             </li>
                           </ul>
-                        </div> */}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -490,11 +512,15 @@ export default function Home() {
                         width={200}
                         height={200}
                         alt="Kallavere Keskkool"
-                        className="w-32 object-cover"
+                        className="h-16 w-16 object-contain max-sm:h-32 max-sm:w-32"
                       />
                       <div className="flex flex-col gap-3">
-                        <h5 className="text-xl font-semibold">
-                          Secondary Education
+                        <h5 className="flex gap-2 text-xl font-semibold text-zinc-100/80">
+                          <GraduationCap
+                            size={24}
+                            className="shrink-0 max-md:hidden"
+                          />{" "}
+                          <p>Secondary Education</p>
                         </h5>
                         <h6 className="text-lg font-semibold text-zinc-100/70">
                           Kallavere Keskkool

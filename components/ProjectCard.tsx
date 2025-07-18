@@ -64,16 +64,16 @@ const ProjectCard = ({
           <p className="prose prose-base text-zinc-100/60">{desc}</p>
           <div className="flex flex-wrap gap-2">{children}</div>
         </div>
-        <div className="mt-4 flex w-full justify-between gap-4">
+        <div className="mt-4 flex w-full justify-between gap-4 max-sm:flex-col">
           <CustomButton
-            optionalClass="basis-1/2"
+            optionalClass=" max-sm:w-full sm:basis-1/2"
             link={github}
             icon={Github}
             title="View Code"
           />
           {demo && (
             <CustomButton
-              optionalClass="basis-1/2"
+              optionalClass="max-sm:w-full sm:basis-1/2"
               link={demo}
               icon={ExternalLink}
               title="Live Demo"
