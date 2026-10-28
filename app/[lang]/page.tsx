@@ -10,7 +10,7 @@ import SkillBadge from "@/components/SkillBadge";
 import SkillBadgeSmall from "@/components/SkillBadgeSmall";
 import StarsBackground from "@/components/StarsBG";
 import Typewriter from "@/components/Typewriter";
-import { isLocale } from "@/i18n/config";
+import { isEnabledLocale, isMultilingual } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { FileUser } from "lucide-react";
 import { Inter } from "next/font/google";
@@ -26,7 +26,7 @@ export default async function Home({
   params: Promise<{ lang: string }>;
 }) {
   const { lang: requestedLang } = await params;
-  const lang = isLocale(requestedLang) ? requestedLang : "en";
+  const lang = isEnabledLocale(requestedLang) ? requestedLang : "en";
   const t = getDictionary(lang);
 
   return (
@@ -35,9 +35,11 @@ export default async function Home({
         <section className="relative mx-auto h-screen w-full max-w-7xl px-4 py-16">
           <StarsBackground />
 
-          <div className="absolute right-4 top-6">
-            <LanguageSwitch lang={lang} label={t.languageSwitch} />
-          </div>
+          {isMultilingual && (
+            <div className="absolute right-4 top-6">
+              <LanguageSwitch lang={lang} label={t.languageSwitch} />
+            </div>
+          )}
 
           <div className="flex h-full w-full flex-col justify-center">
             <div className="flex flex-col justify-center gap-4">

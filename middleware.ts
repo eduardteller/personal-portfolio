@@ -1,14 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
-import { detectLocale, isLocale, localeCookie } from "./i18n/config";
+import {
+  defaultLocale,
+  detectLocale,
+  isEnabledLocale,
+  isLocale,
+  isMultilingual,
+  localeCookie,
+} from "./i18n/config";
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const pathLocale = pathname.split("/")[1];
   const savedLocale = request.cookies.get(localeCookie)?.value;
 
-  if (isLocale(pathLocale)) {
+  if (isEnabledLocale(pathLocale)) {
     const response = NextResponse.next();
-    if (savedLocale !== pathLocale) {
+    if (isMultilingual && savedLocale !== pathLocale) {
       response.cookies.set(localeCookie, pathLocale, {
         path: "/",
         maxAge: 60 * 60 * 24 * 365,
@@ -17,12 +24,29 @@ export function middleware(request: NextRequest) {
     return response;
   }
 
-  const locale = isLocale(savedLocale)
+  const url = request.nextUrl.clone();
+  const rest = pathname === "/" ? "" : pathname;
+
+  // A switched-off language (e.g. an old /et link) falls back to the default
+  if (isLocale(pathLocale)) {
+    url.pathname =
+      pathname.replace(
+        `/${pathLocale}`,
+        isMultilingual ? `/${defaultLocale}` : "",
+      ) || "/";
+    return NextResponse.redirect(url);
+  }
+
+  if (!isMultilingual) {
+    url.pathname = `/${defaultLocale}${rest}`;
+    return NextResponse.rewrite(url);
+  }
+
+  const locale = isEnabledLocale(savedLocale)
     ? savedLocale
     : detectLocale(request.headers.get("accept-language"));
 
-  const url = request.nextUrl.clone();
-  url.pathname = `/${locale}${pathname === "/" ? "" : pathname}`;
+  url.pathname = `/${locale}${rest}`;
   return NextResponse.redirect(url);
 }
 

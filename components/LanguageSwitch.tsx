@@ -1,4 +1,4 @@
-import { Locale, locales } from "@/i18n/config";
+import { enabledLocales, Locale } from "@/i18n/config";
 import Link from "next/link";
 
 interface Props {
@@ -12,7 +12,7 @@ const LanguageSwitch = ({ lang, label }: Props) => {
       aria-label={label}
       className="flex rounded-lg border border-zinc-600 bg-zinc-950 p-1 text-xs font-bold uppercase"
     >
-      {locales.map((locale) => (
+      {enabledLocales.map((locale) => (
         <Link
           key={locale}
           href={`/${locale}`}

@@ -1,4 +1,4 @@
-import { locales } from "@/i18n/config";
+import { enabledLocales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export function generateStaticParams() {
-  return locales.map((lang) => ({ lang }));
+  return enabledLocales.map((lang) => ({ lang }));
 }
 
 export const dynamicParams = false;
