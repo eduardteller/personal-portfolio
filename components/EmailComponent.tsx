@@ -3,12 +3,16 @@
 import { Mail } from "lucide-react";
 import toast from "react-hot-toast";
 
-const CopyMail = () => {
-  const email = "hello@eduardteller.me";
+interface Props {
+  copiedText: string;
+}
+
+const CopyMail = ({ copiedText }: Props) => {
+  const email = "info@tellered.com";
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(email);
-    toast.success("Copied", {
+    toast.success(copiedText, {
       style: {
         borderRadius: "8px",
         background: "#27272a",

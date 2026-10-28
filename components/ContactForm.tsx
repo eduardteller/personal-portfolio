@@ -1,8 +1,9 @@
 "use client";
 import { sendContact } from "@/actions/formAction";
+import { ContactFormText } from "@/i18n/dictionaries";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Poppins } from "next/font/google";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { z } from "zod";
@@ -12,16 +13,22 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
-const formSchema = z.object({
-  name: z.string().min(3, { message: "Name is too short" }).max(50),
-  email: z.string().email(),
-  message: z.string().min(1, { message: "Message is too short" }).max(500),
-});
+const createFormSchema = (text: ContactFormText) =>
+  z.object({
+    name: z.string().min(3, { message: text.nameTooShort }).max(50),
+    email: z.string().email({ message: text.invalidEmail }),
+    message: z.string().min(1, { message: text.messageTooShort }).max(500),
+  });
 
-export type FormData = z.infer<typeof formSchema>;
+export type FormData = z.infer<ReturnType<typeof createFormSchema>>;
 
-const ContactForm = () => {
+interface Props {
+  text: ContactFormText;
+}
+
+const ContactForm = ({ text }: Props) => {
   const [loading, setLoading] = useState(false);
+  const formSchema = useMemo(() => createFormSchema(text), [text]);
   const {
     register,
     handleSubmit,
@@ -35,7 +42,7 @@ const ContactForm = () => {
     setLoading(true);
     const resp = await sendContact(data);
     if (!resp.status) {
-      toast.error("Error while sending info", {
+      toast.error(text.sendError, {
         style: {
           borderRadius: "8px",
           background: "#27272a",
@@ -44,7 +51,7 @@ const ContactForm = () => {
         },
       });
     } else {
-      toast.success("Message Sent", {
+      toast.success(text.sent, {
         style: {
           borderRadius: "8px",
           background: "#27272a",
@@ -75,11 +82,11 @@ const ContactForm = () => {
       >
         <div className="flex w-full flex-col gap-2">
           <div className={headingCSS}>
-            <h6>Full Name</h6>
+            <h6>{text.name}</h6>
           </div>
           <input
             {...register("name")}
-            placeholder="John Doe"
+            placeholder={text.namePlaceholder}
             type="text"
             className={`${inputCSS} focus:border-blue-600`}
           />
@@ -89,10 +96,10 @@ const ContactForm = () => {
         </div>
 
         <div className="flex w-full flex-col gap-2">
-          <h6 className={headingCSS}>Your Email</h6>
+          <h6 className={headingCSS}>{text.email}</h6>
           <input
             className={`${inputCSS} focus:border-purple-600`}
-            placeholder="john@example.com"
+            placeholder={text.emailPlaceholder}
             type="email"
             {...register("email")}
           />
@@ -101,10 +108,10 @@ const ContactForm = () => {
           )}
         </div>
         <div className="flex w-full flex-col gap-2">
-          <h6 className={headingCSS}>Your Message</h6>
+          <h6 className={headingCSS}>{text.message}</h6>
           <textarea
             className={textareaCSS}
-            placeholder="Tell me about your project"
+            placeholder={text.messagePlaceholder}
             {...register("message")}
           />
           {errors.message && (
@@ -114,7 +121,7 @@ const ContactForm = () => {
         <button disabled={loading} className="group relative w-full">
           <div className="animate-gradient absolute inset-0 rounded-lg bg-gradient-to-r from-red-600 via-purple-600 to-blue-600" />
           <div className="relative w-full rounded-lg border border-zinc-100/80 bg-[#151517] p-4 text-sm font-bold uppercase text-zinc-100/80 transition-all duration-150 group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:border-zinc-100 group-hover:text-zinc-100">
-            {loading ? "Sending..." : "Send"}
+            {loading ? text.sending : text.send}
           </div>
         </button>
         {/* <button className="w-full rounded-lg border border-zinc-100/80 bg-transparent p-4 text-sm font-bold uppercase text-zinc-100/80 duration-300 hover:border-zinc-100 hover:text-zinc-100">
