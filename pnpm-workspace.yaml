@@ -1,3 +1,7 @@
+# pnpm 9 (used by Vercel) rejects this file without a packages list
+packages:
+  - .
+
 allowBuilds:
   sharp: true
   unrs-resolver: true
